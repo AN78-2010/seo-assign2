@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SEO Blog - {% block page_title %}Tips on SEO{% endblock %}</title>
+      <link rel="stylesheet" href="{% static "seo/style.css" %}" >
+</head>
+<body>
+
+<div class="column">
+  <header id="site-header">
+     <h1>SEO</h1>
+     <p>A blog about Search Engine Optimization (SEO)</p>
+      <img src="{% static "seo/seo.jpg" %}" alt="SEO team discusses a new project." width=1282px height=350px />
+  </header>
+
+  <!-- Top navigation -->
+  <nav id="top-nav">
+    <ul>
+      <li><a href="{% url "home" %}">Home</a></li>
+      <li><a href="{% url "about" %}">About</a></li>
+      <li><a href="#">Posts</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+    </div>
+  <div class="container">
+  <main class="column1">
+    {% block content %}
+    {% endblock %}
+     </main>
+       <aside id="sidebar" class="column2">
+      <section id="author-list">
+        <h3>Topics</h3>
+          {% for topic in topics %}
+          <ul>
+              <li>
+                  {{ topic.name }} ({{topic.post_count}})
+              </li>
+          </ul>
+          {% endfor %}
+
+
+      </section>
+    </aside>
+ </div>
+<!-- The footer -->
+  <footer id="site-footer">
+    <!-- Print copyright with the current year -->
+    Copyright &copy;{% now 'Y' %}
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Latest Posts</h2>
+{% for post in latest_posts %}
+<div class="blog-post">
+<h3>{{ post.title }}</h3>
+<em>{{ post.published|timesince }} ago</em>
+<p>{{ post.content | truncatewords:50 }}</p>
+    </div>
+{% endfor %}
+<div class="clearfix"></div>
+
+{% endblock %}

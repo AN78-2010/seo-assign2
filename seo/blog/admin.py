@@ -20,6 +20,8 @@ class CommentAdmin(admin.ModelAdmin):
         "post",
         "email",
         "text",
+        "approved",
+
 
     )
     search_fields = (
@@ -34,7 +36,7 @@ class CommentAdmin(admin.ModelAdmin):
     )
 class CommentInline(admin.StackedInline):
     model = Comment
-    extra = 0 # Number of empty comment forms to display
+    extra = 0
 
 class PostAdmin(admin.ModelAdmin):
     inlines = [CommentInline]

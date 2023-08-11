@@ -1,0 +1,143 @@
+ @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Reset default margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set the overall width of the page */
+
+html {
+    height: 100%; /* Ensure full height */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto, sans-serif;
+    background-color: #f5f5f5;
+}
+body {
+    margin: 0;
+     padding: 1rem;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+
+}
+
+/* headings */
+
+h1,h2,h3,h4,h5,h6,p, li, ul, a{
+font-family:Roboto, sans-serif;
+margin:0.5rem;
+}
+h1{font-size:2.5rem;
+font-weight:700;
+}
+h2{font-size:2rem;
+font-weight:700;
+}
+h2{font-size:1.7rem;
+font-weight:500;
+}
+.container {
+    width: 1282px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.column {
+    padding: 0px;
+    box-sizing: border-box;
+    background-color:#000;
+}
+/* header */
+
+header#site-header {
+    margin-top: 9rem;
+}
+#site-header h1 {
+  padding: 0;
+  margin: 0;
+  color:#fff;
+  padding: 0 0.5rem;
+
+}
+
+#site-header p {
+  font-size: 0.9rem;
+  color: #666;
+  padding: 0;
+  margin: 0;
+  color:#fff;
+  font-weight:bold;
+  padding: 0 0.5rem;
+}
+/* Style the top nav */
+#top-nav {
+  padding: 1rem 0.5rem;
+    border-bottom: 1px solid #eee;
+    background-color: #000;
+}
+
+#top-nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+#top-nav li {
+  margin-top: 1rem;
+  list-style-type: none;
+  display: inline-block;
+  padding-right: 1rem;
+}
+
+#top-nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0px 0px 10px 0px;
+  padding: 0px 20px 0px 0px;
+}
+
+
+/* main */
+.column1 {
+    width: 78%;
+    background-color: #ffffff;
+    padding: 0.5rem;
+}
+/* sidebar */
+.column2 {
+    width: 23%;
+    background-color: #ffffff;
+    padding:1rem 1.5rem;
+}
+/* footer */
+footer#site-footer {
+    background-color: #000;
+    padding: 20px;
+    color: #fff;
+}
+
+
+/* text style */
+p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.05rem;
+
+}
+/* blog posts */
+.blog-post {
+    width: 30%; /* Adjust the width as needed */
+    box-sizing: border-box;
+    margin: 0 1%; /* Add some space between the divs */
+    float: left; /* Float the divs to the left to place them side by side */
+}
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
