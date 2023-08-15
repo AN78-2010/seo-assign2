@@ -66,6 +66,18 @@ class PcontestantAdmin(admin.ModelAdmin):
         "name",
         "email",
         "image",
+        "submission_date",
+    )
+
+    search_fields = (
+        "name",
+        "submission_date",
+
+
+    )
+    list_filter = (
+        "name",
+        "submission_date",
     )
 
 
