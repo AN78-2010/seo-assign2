@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from . models import Post, Topic, Comment
+from . models import Post, Topic, Comment, Pcontestant
 
 class TopicAdmin(admin.ModelAdmin):
     list_display = [
@@ -60,6 +60,16 @@ class PostAdmin(admin.ModelAdmin):
     )
     prepopulated_fields = {"slug": ("title",)}
 
+class PcontestantAdmin(admin.ModelAdmin):
+    list_display = (
+
+        "name",
+        "email",
+        "image",
+    )
+
+
+admin.site.register(Pcontestant, PcontestantAdmin)
 admin.site.register(Topic, TopicAdmin)
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(Post, PostAdmin)

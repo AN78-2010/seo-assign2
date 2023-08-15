@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,8 +23,11 @@
     <ul>
       <li><a href="{% url "home" %}">Home</a></li>
       <li><a href="{% url "about" %}">About</a></li>
-      <li><a href="#">Posts</a></li>
+      <li><a href="{% url "posts" %}">Posts</a></li>
+        <li> <a href="{% url "topics" %}">Topics</a></li>
       <li><a href="#">Contact</a></li>
+        <li><a href="{% url "submit_image" %}">Contest</a></li>
+
     </ul>
   </nav>
     </div>
@@ -40,11 +42,18 @@
           {% for topic in topics %}
           <ul>
               <li>
-                  {{ topic.name }} ({{topic.post_count}})
+                 <a href="{{ topic.get_absolute_url }}"> {{ topic.name }}</a>
               </li>
           </ul>
           {% endfor %}
-
+             <h3>Authors</h3>
+          {% for author in users %}
+          <ul>
+          <li>
+              <a href="{{ user.id }}"> {{ author.get_full_name }}</a>
+          </li>
+          </ul>
+            {% endfor %}
 
       </section>
     </aside>
@@ -52,7 +61,7 @@
 <!-- The footer -->
   <footer id="site-footer">
     <!-- Print copyright with the current year -->
-    Copyright &copy;{% now 'Y' %}
+    Copyright &copy;{% now 'Y' %} | <a href="{% url "terms-and-conditions" %}">Terms & Conditions</a>
   </footer>
 
 </body>

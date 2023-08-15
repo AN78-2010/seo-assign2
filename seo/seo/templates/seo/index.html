@@ -1,13 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Latest Posts</h2>
+    <h2>Latest Posts</h2>
 {% for post in latest_posts %}
-<div class="blog-post">
-<h3>{{ post.title }}</h3>
-<em>{{ post.published|timesince }} ago</em>
-<p>{{ post.content | truncatewords:50 }}</p>
-    </div>
+    <div class="blog-post">
+    <h3><a href="{{ post.get_absolute_url  }}">{{ post.title }}</a></h3>
+
+    <p>By {{post.author.get_full_name }}</p>
+    <p>Published:  <em>{{ post.published|timesince }} ago</em></p>
+    <p>{{ post.content | truncatewords:40 }}</p>
+        <p><a href="{{ post.get_absolute_url  }}">Read More</a></p>
+        </div>
 {% endfor %}
-<div class="clearfix"></div>
+
+
+    <div class="clearfix"></div>
 
 {% endblock %}
