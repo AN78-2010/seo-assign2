@@ -75,14 +75,14 @@ def submit_image(request):
 
 
 
-def like_comment(request, comment_id):
-    comment = get_object_or_404(Comment, id=comment_id)
-    comment.like += 1
+def like_comments(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    comment.likes = F('likes') + 1
     comment.save()
-    return redirect(reverse('post_detail', args=[comment.post.id]))
+    return JsonResponse({'likes': comment.likes})
 
-def dislike_comment(request, comment_id):
-    comment = get_object_or_404(Comment, id=comment_id)
-    comment.dislike += 1
+def dislike_comments(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    comment.dislikes = F('dislikes') + 1
     comment.save()
-    return redirect(reverse('post_detail', args=[comment.post.id]))
+    return JsonResponse({'dislikes': comment.dislikes})
